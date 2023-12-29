@@ -6,7 +6,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import Navbar from "@/components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 
-export const inter = Inter({
+
+const inter = Inter({
   subsets: ["latin"],
 });
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "min-h-screen bg-background font-sans grainy antialiased",
+            "min-h-screen bg-background  grainy antialiased",
             inter.className
           )}
         >
