@@ -24,7 +24,7 @@ export default async function Dashboard() {
     include: {
       views: true,
     },
-    cacheStrategy: { swr: 60, ttl: 60 },
+
   });
 
   return (

@@ -16,7 +16,6 @@ const Page =async ({ params }: { params: { id: string; name: string } }) => {
         include: {
           views: true,
         },
-        cacheStrategy: { swr: 60, ttl: 60 },
       });
     
 
