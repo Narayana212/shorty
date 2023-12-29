@@ -20,7 +20,7 @@ export default function Home() {
           More than just <span className="text-red-600">shorter</span> links.
         </h1>
         <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-          Shorty allows you to build your brand's recognition and get detailed
+          Shorty allows you to build your brand&apos;s recognition and get detailed
           insights on how your links are performing.
         </p>
 
