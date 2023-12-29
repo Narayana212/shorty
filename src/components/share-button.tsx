@@ -12,14 +12,16 @@ import {
 } from "@/components/ui/popover"
 
 import { Button } from "@/components/ui/button";
+import { useOrigin } from "@/hooks/use-origin";
 
 
 
 export const ShareButton = ({id,name}:{id:any,name:string}) => {
+    const origin =useOrigin()
  
 
   const [copied, setCopied] = useState(false);
-  const url = `http://localhost:3000/share/${id}/${name}`;
+  const url = `${origin}/share/${id}/${name}`;
   const onCopy = () => {
     navigator.clipboard.writeText(url);
     setCopied(true);

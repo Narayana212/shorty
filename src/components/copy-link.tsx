@@ -10,13 +10,15 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useOrigin } from "@/hooks/use-origin";
 
 export default function CopyLink({ url }: { url: string }) {
   const [isCopied, setIsCopied] = useState(false);
+  const origin=useOrigin()
 
   const handleCopyClick = () => {
     navigator.clipboard
-      .writeText(`http://localhost:3000/${url}`)
+      .writeText(`${origin}/${url}`)
       .then(() => {
         setIsCopied(true);
         setTimeout(() => {
