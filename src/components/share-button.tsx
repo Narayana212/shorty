@@ -16,12 +16,30 @@ import { useOrigin } from "@/hooks/use-origin";
 
 
 
+/**
+ * ShareButton component for sharing a URL with a copy functionality
+ * @param {Object} props - The component props
+ * @param {any} props.id - The ID to be used in the share URL
+ * @param {string} props.name - The name to be used in the share URL
+ * @returns {JSX.Element} A Popover component containing a share button and URL copy functionality
+ */
 export const ShareButton = ({id,name}:{id:any,name:string}) => {
     const origin =useOrigin()
  
 
   const [copied, setCopied] = useState(false);
   const url = `${origin}/share/${id}/${name}`;
+  /**
+   * Copies the URL to the clipboard and sets a temporary 'copied' state
+   * @param {void} - This function doesn't take any parameters
+   * @returns {void} This function doesn't return anything
+   /**
+    * Sets a timeout to reset the 'copied' state to false after 1 second
+    * @param {function} callback - The function to be executed after the timeout
+    * @param {number} delay - The delay in milliseconds before executing the callback
+    * @returns {number} The timeout ID that can be used to clear the timeout
+    */
+   */
   const onCopy = () => {
     navigator.clipboard.writeText(url);
     setCopied(true);
