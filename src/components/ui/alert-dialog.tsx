@@ -15,6 +15,13 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal
 const AlertDialogOverlay = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
+/**
+ * Renders an overlay component for an alert dialog using AlertDialogPrimitive.Overlay
+ * @param {Object} props - The props object
+ * @param {string} [props.className] - Additional CSS class names to apply to the overlay
+ * @param {React.Ref} ref - React ref object for the overlay element
+ * @returns {JSX.Element} The rendered AlertDialogPrimitive.Overlay component
+ */
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Overlay
     className={cn(
@@ -30,6 +37,13 @@ AlertDialogOverlay.displayName = AlertDialogPrimitive.Overlay.displayName
 const AlertDialogContent = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
+/**
+ * Creates an AlertDialog component with a portal, overlay, and content.
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} [props.className] - Additional CSS class names for the content.
+ * @param {React.Ref} ref - The ref object for the AlertDialogPrimitive.Content.
+ * @returns {React.ReactElement} The rendered AlertDialog component.
+ */
 >(({ className, ...props }, ref) => (
   <AlertDialogPortal>
     <AlertDialogOverlay />
@@ -45,6 +59,13 @@ const AlertDialogContent = React.forwardRef<
 ))
 AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
 
+/**
+ * Renders the header component for an alert dialog.
+ * @param {Object} props - The properties passed to the component.
+ * @param {string} [props.className] - Additional CSS class names to apply to the component.
+ * @param {...React.HTMLAttributes<HTMLDivElement>} [props] - Any other props to pass to the underlying div element.
+ * @returns {JSX.Element} A div element styled as an alert dialog header.
+ */
 const AlertDialogHeader = ({
   className,
   ...props
@@ -59,6 +80,11 @@ const AlertDialogHeader = ({
 )
 AlertDialogHeader.displayName = "AlertDialogHeader"
 
+/**
+ * Renders the footer of an alert dialog component
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - The props for the component, including className and any other HTML div attributes
+ * @returns {JSX.Element} A div element with flexbox styling for layout
+ */
 const AlertDialogFooter = ({
   className,
   ...props
@@ -76,6 +102,13 @@ AlertDialogFooter.displayName = "AlertDialogFooter"
 const AlertDialogTitle = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
+/**
+ * A React component that renders an AlertDialog title using Radix UI's AlertDialogPrimitive.
+ * @param {Object} props - The props object.
+ * @param {string} [props.className] - Additional CSS class names to apply to the title.
+ * @param {React.Ref} ref - A ref to be forwarded to the underlying title element.
+ * @returns {React.ReactElement} A styled AlertDialog title component.
+ */
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Title
     ref={ref}
@@ -88,6 +121,13 @@ AlertDialogTitle.displayName = AlertDialogPrimitive.Title.displayName
 const AlertDialogDescription = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
+/**
+ * A functional component that renders an AlertDialog description using Radix UI Primitive.
+ * @param {object} props - The props object.
+ * @param {string} [props.className] - Additional CSS class names to apply to the description.
+ * @param {React.Ref} ref - A ref object to attach to the description element.
+ * @returns {React.ReactElement} A React element representing the AlertDialog description.
+ */
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Description
     ref={ref}
@@ -101,11 +141,25 @@ AlertDialogDescription.displayName =
 const AlertDialogAction = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
+/**
+ * Creates an action button for an alert dialog using AlertDialogPrimitive.Action
+ * @param {Object} props - The props object
+ * @param {string} [props.className] - Additional CSS class names for styling
+ * @param {React.Ref} ref - Ref object for the button
+ * @returns {JSX.Element} A styled action button for the alert dialog
+ */
 >(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Action
     ref={ref}
     className={cn(buttonVariants(), className)}
     {...props}
+  /**
+   * A React component that renders a Cancel button for an AlertDialog using RadixUI Primitive.
+   * @param {Object} props - The props object containing className and other properties.
+   * @param {string} [props.className] - Additional CSS class names to apply to the button.
+   * @param {React.Ref} ref - A forwarded ref to be applied to the underlying button element.
+   * @returns {React.ReactElement} A styled Cancel button component for AlertDialog.
+   */
   />
 ))
 AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
