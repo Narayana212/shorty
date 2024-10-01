@@ -36,6 +36,15 @@ export function CreateButton() {
 
       }
       const promise = () =>
+        /**
+         /**
+          * Asynchronously resolves with an object containing a name after a 1-second delay
+          * @param {function} resolve - The resolve function of the Promise
+          * @returns {undefined} This function doesn't explicitly return anything, but resolves the Promise after the timeout
+          */
+         * Creates a Promise that resolves after a 1-second delay with an object containing a name
+         * @returns {Promise<Object>} A Promise that resolves to an object with a 'name' property set to "Narayana"
+         */
         new Promise((resolve) =>
           setTimeout(() => resolve({ name: "Narayana" }), 1000)
         );
@@ -43,6 +52,11 @@ export function CreateButton() {
 
       toast.promise(promise, {
         loading: "Creating...",
+        /**
+         * Callback function for successful short URL creation
+         * @param {Object} data - The response data from the server
+         * @returns {string} A success message indicating the short URL was created
+         */
         success: (data) => {
           return `Short url created successfully`;
         },
@@ -67,6 +81,11 @@ export function CreateButton() {
             The short url will be genearted after clicking save.
             <div className="grid gap-4 py-4">
               <div className="grid grid-cols-4 items-center gap-4">
+                /**
+                 * Event handler for updating the title state when the input value changes
+                 * @param {React.ChangeEvent<HTMLInputElement>} e - The change event object
+                 * @returns {void} This function does not return a value
+                 */
                 <Label htmlFor="title" className="text-right">
                   Title
                 </Label>
@@ -79,6 +98,11 @@ export function CreateButton() {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
+                /**
+                 * Updates the URL state when the input value changes
+                 * @param {React.ChangeEvent<HTMLInputElement>} e - The change event object
+                 * @returns {void} This function doesn't return a value
+                 */
                 <Label htmlFor="url" className="text-right">
                   Url
                 </Label>
@@ -98,6 +122,10 @@ export function CreateButton() {
 
           <AlertDialogAction asChild>
             <Button
+              /**
+               * Handles the click event to create a URL client
+               * @returns {void} This function doesn't return a value
+               */
               onClick={() => {
                 createUrlClient();
               }}
