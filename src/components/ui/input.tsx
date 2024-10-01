@@ -6,6 +6,14 @@ export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  /**
+   * Renders a customizable input component with predefined styles
+   * @param {Object} props - The component props
+   * @param {string} [props.className] - Additional CSS classes to apply to the input
+   * @param {string} [props.type] - The type of the input (e.g., 'text', 'password', etc.)
+   * @param {React.Ref} ref - A ref to be forwarded to the input element
+   * @returns {React.Element} A styled input element with merged props and classes
+   */
   ({ className, type, ...props }, ref) => {
     return (
       <input
