@@ -6,6 +6,10 @@ import { ArrowRight } from "lucide-react";
 import MaxWidthWrapper from "./max-width-wrapper";
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 
+/**
+ * Renders a navigation bar component with user authentication features
+ * @returns {JSX.Element} A React component representing the navigation bar
+ */
 const Navbar =  () => {
   const { user } = useUser();
   

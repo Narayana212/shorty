@@ -17,6 +17,13 @@ const DialogClose = DialogPrimitive.Close
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+/**
+ * Creates a Dialog Overlay component using Radix UI's DialogPrimitive.Overlay
+ * @param {object} props - The props object
+ * @param {string} [props.className] - Additional CSS class names to apply to the overlay
+ * @param {React.Ref} ref - Ref object for the overlay element
+ * @returns {React.ReactElement} A React component representing the dialog overlay
+ */
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
@@ -32,6 +39,14 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 const DialogContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+/**
+ * Renders a dialog component with customizable content and styling.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS classes for the dialog content.
+ * @param {React.ReactNode} props.children - The content to be rendered inside the dialog.
+ * @param {React.Ref} ref - Ref object for the dialog content.
+ * @returns {React.ReactElement} A portal containing the dialog overlay and content.
+ */
 >(({ className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
@@ -53,6 +68,11 @@ const DialogContent = React.forwardRef<
 ))
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
+/**
+ * A React component that renders a header for a dialog or modal.
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - The props to be spread on the div element, including className and any other HTML attributes.
+ * @returns {JSX.Element} A div element with applied styles and props, typically used as a header in dialog components.
+ */
 const DialogHeader = ({
   className,
   ...props
@@ -67,7 +87,13 @@ const DialogHeader = ({
 )
 DialogHeader.displayName = "DialogHeader"
 
-const DialogFooter = ({
+```
+/**
+ * Renders a dialog footer component with flexible layout options.
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - The props to be spread on the div element, including className and any other HTML attributes.
+ * @returns {JSX.Element} A div element styled as a dialog footer with responsive layout.
+ */
+```const DialogFooter = ({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -78,6 +104,15 @@ const DialogFooter = ({
     )}
     {...props}
   />
+```
+/**
+ * A React component that renders a dialog title using DialogPrimitive.Title
+ * @param {object} props - The props object
+ * @param {string} [props.className] - Additional CSS class names to apply to the title
+ * @param {React.Ref} ref - A ref to be forwarded to the underlying DialogPrimitive.Title component
+ * @returns {React.ReactElement} A styled DialogPrimitive.Title component
+ */
+```
 )
 DialogFooter.displayName = "DialogFooter"
 
@@ -99,6 +134,13 @@ DialogTitle.displayName = DialogPrimitive.Title.displayName
 const DialogDescription = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+/**
+ * A React component that renders a description for a dialog using DialogPrimitive.Description
+ * @param {Object} props - The props object
+ * @param {string} [props.className] - Additional CSS class names to apply to the description
+ * @param {React.Ref} ref - A React ref to be forwarded to the underlying DialogPrimitive.Description component
+ * @returns {React.ReactElement} A DialogPrimitive.Description component with applied styling and props
+ */
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
     ref={ref}
