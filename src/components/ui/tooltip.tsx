@@ -14,6 +14,14 @@ const TooltipTrigger = TooltipPrimitive.Trigger
 const TooltipContent = React.forwardRef<
   React.ElementRef<typeof TooltipPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
+/**
+ * Renders a customizable tooltip content component with animation and positioning.
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS class names for the tooltip content.
+ * @param {number} [props.sideOffset=4] - The offset from the trigger element in pixels.
+ * @param {React.Ref} ref - The forwarded ref for the tooltip content.
+ * @returns {React.ReactElement} A styled and animated tooltip content component.
+ */
 >(({ className, sideOffset = 4, ...props }, ref) => (
   <TooltipPrimitive.Content
     ref={ref}
